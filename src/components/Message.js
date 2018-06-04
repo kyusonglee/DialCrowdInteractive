@@ -15,15 +15,9 @@ class Message extends React.Component {
 				 {this.props.image != "" ? <img style={{"width":"350px"}} src={this.props.image}/>:null}
             </div>
             { this.props.received ? <Review index={ this.props.index }/> : null }
-		     <div 
-				style={{"display":"block"}}
-                className={ "sent message" 
-                }>
-				 {this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (
-				  <button>{item}</button>
-				  )):null
-				  }
-            </div>
+	 		{this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (
+			  	 <button>{item}</button>
+			      )):null}
         </div>    
     }
 }
