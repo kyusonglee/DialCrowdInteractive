@@ -44,29 +44,34 @@ export default function* rootSaga() {
 }
 
 function* receiveStatusSaga(data) {
-    yield put(addMessage(data.msg, Date.now(), true,""));
+    yield put(addMessage(data.msg, Date.now(), true,"",[]));
 }
 
 function* receiveMessageSaga(synth, sessionData, messageData) {
     const message = messageData.msg;
 	console.log("message:",message);
-	if (typeof message == "string")
-    	{yield put(addMessage(message, Date.now(), true,""));}
-	else
-    	{
-			if (message.image != null)
-			{
-				yield put(addMessage(message.value, Date.now(), true,message.image));
-			}
-		}
+	var image = "";
+	var candidate = [];
 
+	if (typeof message != "string")
+	{
+		if (message.image != null)
+		{
+			image = message.image;
+		}
+		if (message.candiate != null)
+		{
+			candidate = message.candidate	
+		}
+	}
+	yield put(addMessage(message.value, Date.now(), true, image, candidate));
     const utterance = new SpeechSynthesisUtterance(message);
     synth.speak(utterance);
     yield fork(logMessage, sessionData, message, "Bot")
 }
 
 function* sendMessageSaga(socket, data, action) {
-    yield put(addMessage(action.text, action.time, false,""));
+    yield put(addMessage(action.text, action.time, false,"",[]));
     socket.emit('usr_input', { msg: action.text, sid: data.sid });
     yield fork(logMessage, data, action.text, "You")
 }

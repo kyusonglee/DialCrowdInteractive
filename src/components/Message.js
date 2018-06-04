@@ -7,11 +7,17 @@ class Message extends React.Component {
     render() {
         return <div className="messageContainer" style={{ ...this.props.style }}>
             <div 
+				style={{"display":"flex"}}
                 className={ 
                     (this.props.received ? "received" : "sent") + " message" 
                 }>
 			     <span className="messageText">{this.props.text}</span>
-				 {this.props.image != ""? <img style={{"width":"250px"}} src={this.props.image}/>:null}
+				 {this.props.image != "" ? <img style={{"width":"350px"}} src={this.props.image}/>:null}
+				 {this.props.candidate != [] ?  
+				  this.props.candidate.map(function(idex, item){
+				  <button>{item}</button>
+				  }):null
+				 }
             </div>
             { this.props.received ? <Review index={ this.props.index }/> : null }
         </div>    

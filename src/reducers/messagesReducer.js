@@ -6,6 +6,7 @@ export default function messagesReducer(state, action) {
                 time: action.time,
                 received: action.received,
                 image: action.image,
+				candidate: action.candidate,
             }])
         default: 
             return state || []
