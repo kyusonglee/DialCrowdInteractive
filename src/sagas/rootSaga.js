@@ -59,7 +59,7 @@ function* receiveMessageSaga(synth, sessionData, messageData) {
 		{
 			image = message.image;
 		}
-		if (message.candiate != null)
+		if (message.candidate != null)
 		{
 			candidate = message.candidate	
 		}
