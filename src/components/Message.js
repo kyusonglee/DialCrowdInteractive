@@ -11,6 +11,8 @@ class Message extends React.Component {
                     (this.props.received ? "received" : "sent") + " message" 
                 }>
                 <span className="messageText">{ this.props.text }</span>
+				<img src="https://skylar.speech.cs.cmu.edu/~kyusonglee/website/assets/img/cmu.png">
+
             </div>
             { this.props.received ? <Review index={ this.props.index }/> : null }
         </div>    
