@@ -76,6 +76,12 @@ html, body {
 .messageText {
 }
 
+.messageButtom {
+    border-color: #cecece;
+    color: black;
+    background-color: #ffffff;
+}
+
 .bottom {
     width: 100%;
     display: flex;

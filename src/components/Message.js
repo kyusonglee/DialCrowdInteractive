@@ -16,7 +16,7 @@ class Message extends React.Component {
             </div>
             { this.props.received ? <Review index={ this.props.index }/> : null }
 	 		{this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (
-			  	 <button onClick={()=>this.props.onEnter(item,Date.now())}  >{item}</button>
+			  	 <button className="messageButtom"  onClick={()=>this.props.onEnter(item,Date.now())}  >{item}</button>
 			      )):null}
         </div>    
     }
