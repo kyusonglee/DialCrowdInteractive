@@ -6,11 +6,12 @@ export function sendMessage(text, time) {
     }
 }
 
-export function addMessage(text, time, received) {
+export function addMessage(text, time, received,image) {
     return {
         type: 'MESSAGE_ADD',
         text,
         time,
         received,
+		image,
     }
 }
