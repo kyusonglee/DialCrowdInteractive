@@ -64,6 +64,7 @@ function* receiveMessageSaga(synth, sessionData, messageData) {
 			candidate = message.candidate	
 		}
 	}
+	console.log(candidate);
 	yield put(addMessage(message.value, Date.now(), true, image, candidate));
     const utterance = new SpeechSynthesisUtterance(message);
     synth.speak(utterance);
