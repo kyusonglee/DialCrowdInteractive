@@ -50,7 +50,11 @@ function* receiveStatusSaga(data) {
 function* receiveMessageSaga(synth, sessionData, messageData) {
     const message = messageData.msg;
 	console.log("message:",message);
-    yield put(addMessage(message, Date.now(), true));
+	if (typeof message == "string")
+    	yield put(addMessage(message, Date.now(), true));
+	else:
+    	yield put(addMessage(message.value, Date.now(), true));
+
     const utterance = new SpeechSynthesisUtterance(message);
     synth.speak(utterance);
     yield fork(logMessage, sessionData, message, "Bot")
