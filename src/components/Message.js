@@ -12,7 +12,7 @@ class Message extends React.Component {
                     (this.props.received ? "received" : "sent") + " message" 
                 }>
 			     <span className="messageText">{this.props.text}</span>
-				 {this.props.image != "" ? <img style={{"width":"350px"}} src={this.props.image}/>:null}
+				 {this.props.image != "" ? <img style={{"width":"70%"}} src={this.props.image}/>:null}
             </div>
             { this.props.received ? <Review index={ this.props.index }/> : null }
 	 		{this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (

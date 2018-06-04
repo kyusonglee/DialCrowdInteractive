@@ -53,7 +53,7 @@ html, body {
     padding: 8px;
     padding-left: 18px;
     padding-right: 18px;
-    max-width: 360px;
+    max-width: 70%;
     box-shadow: 0px 1px 3px #84817a;
     margin-right: 18px;
     margin-left: 18px;
@@ -77,9 +77,13 @@ html, body {
 }
 
 .messageButtom {
-    border-color: #cecece;
+	border-color: #cecece;
     color: black;
     background-color: #ffffff;
+    border-radius: 18px;
+    margin: 2px;
+    font-size: 13px;
+    height: 25px;
 }
 
 .bottom {
