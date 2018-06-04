@@ -49,6 +49,7 @@ function* receiveStatusSaga(data) {
 
 function* receiveMessageSaga(synth, sessionData, messageData) {
     const message = messageData.msg;
+	console.log("message:",message);
     yield put(addMessage(message, Date.now(), true));
     const utterance = new SpeechSynthesisUtterance(message);
     synth.speak(utterance);
