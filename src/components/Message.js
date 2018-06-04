@@ -7,7 +7,7 @@ class Message extends React.Component {
     render() {
         return <div className="messageContainer" style={{ ...this.props.style }}>
             <div 
-				style={{"display":"flex"}}
+				style={{"display":"block"}}
                 className={ 
                     (this.props.received ? "received" : "sent") + " message" 
                 }>
