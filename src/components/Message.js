@@ -19,9 +19,9 @@ class Message extends React.Component {
 				style={{"display":"block"}}
                 className={ "sent message" 
                 }>
-				 {this.props.candidate.length > 0 ? this.props.candidate.map((item,index) =>
+				 {this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (
 				  <button>{item}</button>
-				  ):null
+				  )):null
 				  }
             </div>
         </div>    
