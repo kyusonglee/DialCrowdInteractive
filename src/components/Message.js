@@ -10,7 +10,7 @@ class Message extends React.Component {
                 className={ 
                     (this.props.received ? "received" : "sent") + " message" 
                 }>
-                <span className="messageText">{ this.props.text }</span>
+                <span className="messageText">{"A"+ this.props.text }</span>
 				<img src="https://skylar.speech.cs.cmu.edu/~kyusonglee/website/assets/img/cmu.png">
 
             </div>
