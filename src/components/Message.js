@@ -18,7 +18,7 @@ class Message extends React.Component {
 				 {this.props.image != "" ? 
   <Card
     hoverable
-    style={{ width: 300 }}
+    style={{ width: 300,margin:20 }}
     cover={<img alt="example" src={this.props.image} />}
   >
     <Meta
