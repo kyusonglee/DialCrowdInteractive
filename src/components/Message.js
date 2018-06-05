@@ -12,8 +12,8 @@ class Message extends React.Component {
                     (this.props.received ? "received" : "sent") + " message" 
                 }>
 			     <span className="messageText">{this.props.text}</span>
-				 {this.props.image != "" ? <img style={{"width":"70%"}} src={this.props.image}/>:null}
             </div>
+				 {this.props.image != "" ? <img style={{"width":"70%","margin-top":"10px"}} src={this.props.image}/>:null}
             { this.props.received ? <Review index={ this.props.index }/> : null }
 	 		{this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (
 			  	 <button className="messageButtom"  onClick={()=>this.props.onEnter(item,Date.now())}  >{item}</button>
