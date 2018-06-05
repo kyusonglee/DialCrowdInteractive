@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Review from './Review';
+import Card from "antd/lib/card";
 import { sendMessage } from '../actions/messageActions';
+const { Meta } = Card;
 
 class Message extends React.Component {
     render() {
@@ -13,7 +15,19 @@ class Message extends React.Component {
                 }>
 			     <span className="messageText">{this.props.text}</span>
             </div>
-				 {this.props.image != "" ? <img style={{"width":"70%","margin-top":"10px"}} src={this.props.image}/>:null}
+				 {this.props.image != "" ? 
+  <Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt="example" src={"this.props.image"} />}
+  >
+    <Meta
+      title="Europe Street beat"
+      description="www.instagram.com"
+    />
+  </Card>
+				 :null
+				 }
             { this.props.received ? <Review index={ this.props.index }/> : null }
 	 		{this.props.candidate.length > 0 ? this.props.candidate.map((item,index) => (
 			  	 <button className="messageButtom"  onClick={()=>this.props.onEnter(item,Date.now())}  >{item}</button>
