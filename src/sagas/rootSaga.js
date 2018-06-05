@@ -68,13 +68,13 @@ function* receiveMessageSaga(synth, sessionData, messageData) {
 	yield put(addMessage(message.value, Date.now(), true, image, candidate));
     //const utterance = new SpeechSynthesisUtterance(message);
     //synth.speak(utterance);
-    yield fork(logMessage, sessionData, message, "Bot")
+    //yield fork(logMessage, sessionData, message, "Bot")
 }
 
 function* sendMessageSaga(socket, data, action) {
     yield put(addMessage(action.text, action.time, false,"",[]));
     socket.emit('usr_input', { msg: action.text, sid: data.sid });
-    yield fork(logMessage, data, action.text, "You")
+    //yield fork(logMessage, data, action.text, "You")
 }
 
 function* logMessage(data, text, role) {
