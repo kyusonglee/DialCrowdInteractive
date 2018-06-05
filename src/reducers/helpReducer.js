@@ -3,7 +3,7 @@ export default function helpReducer(state, action) {
         case 'HELP_UPDATE':
             return action.text
         default:
-            return state || "Lorem ipsum"
+            return state || "Empty"
     }
 }
 

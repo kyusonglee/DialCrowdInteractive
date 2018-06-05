@@ -67,7 +67,7 @@ function* receiveMessageSaga(synth, sessionData, messageData) {
 	console.log(candidate);
 	yield put(addMessage(message.value, Date.now(), true, image, candidate));
     const utterance = new SpeechSynthesisUtterance(message);
-    synth.speak(utterance);
+    synth.speak(utterance.value);
     yield fork(logMessage, sessionData, message, "Bot")
 }
 
