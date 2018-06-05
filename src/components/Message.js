@@ -22,8 +22,8 @@ class Message extends React.Component {
     cover={<img alt="example" src={this.props.image} />}
   >
     <Meta
-      title="Europe Street beat"
-      description="www.instagram.com"
+      title={this.props.text.split("!")[0]}
+      description="www.sephora.cn"
     />
   </Card>
 				 :null
